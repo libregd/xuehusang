@@ -1,14 +1,34 @@
 
 .navDeco {
-    width: 0%;
+    /* width: 0%; */
     height: 2px;  
     margin: auto;
     margin-bottom: 0;
 }
-@keyframes mymove {
+
+/* 这样有了, 但是过渡不自然 */
+/* 好了你看看效果 */
+/* 老师，我悟了 */
+/* 先到这, 有问题记得问我 */
+/* 88 */
+/* ?88 */
+/* 886 */
+.navbar-nav .nav-item:hover .navDeco{
+  /* animation: mymove 1s forwards; */
+  width: 100%;
+}
+.navbar-nav .nav-item .navDeco{
+  /* animation: mymove 1s forwards; */
+  transition: width 1s;
+  width: 0%;
+  
+}
+
+
+/* @keyframes mymove {
     from {width:5%;}
     to {width:100%;}
-  }
+  } */
   /*我看看咋打开/
   //http://127.0.0.1:5500/index.html#
 /* 应该可以把本地的3000让我访问的,让我看看页面 */

@@ -20,19 +20,26 @@
     <header id="mainNav"></header>
 
 <!--这部分放主banner -->
-    <div id="mainBanner" class="container-fluid">
-
+    <div id="mainBanner" class="container-lg">
     </div>
 
 <!--  -->
+<!--这部分放qa.html-->
+<div id="question" class="container-lg">
+</div>
 
-<!--  -->
+<!--这部分放recommend.html-->
+<div id="recommend" class="container-lg">
+</div>
 
-<!--  -->
-
-
+<!--这部分放download-->
+<div id="download" class="container-lg">
+</div>
+<!--这部分放about.html -->
+<div id="about" class="container-lg">
+</div>
 <!-- 这里放了footer -->
-    <footer id="footNav"></footer>
+    <div id="footNav"></div>
 
 
     <!--也是在线的文件 因为我不知道会用到多少bootstrap的compenonts，所以还是需要引入一下js，怕累 -->
@@ -41,8 +48,15 @@
     <!-- 用来写一些js -->
     <script> 
         $("#mainNav").load("assets/header.html");
-        $("#footNav").load("assets/footer.html");
         $("#mainBanner").load("assets/banner.html");
+        $("#question").load("assets/question.html");
+        $("#recommend").load("assets/recommend.html");
+        $("#download").load("assets/download.html");
+        $("#about").load("assets/about.html");
+        $("#footNav").load("assets/footer.html");
+
+
+
 
     </script>
 

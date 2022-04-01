@@ -6,17 +6,22 @@
      
         
         <a class="navbar-brand" href="#mainNav">
-          
-          <img class="img-fluid w-50" src="../images/igloo-logo.png"> 
+          <!-- 这句路径不是相对于当前，而是放到了index。html的相对路径，不这样本地看不到这个图 -->
+          <img class="img-fluid w-50" src="images/igloo-logo.png"> 
           </a>
       
       
       <!-- 这里是放toggler的 -->
       <a class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        <span class="navbar-close-icon">
+        <!-- 回头再搞这个什么icon的效果，
+        首先，不想使用那种pure css写法，太炫技了，三个横线都要自己画，简直就是绣花针炒菜。
+        其次，不要贸然引入什么icon animation库，虽然最终的目标是任意两个icon通过事件切换随意切，而不是特定的某两个icon
+        最后，
+        -->
+        <!-- <span class="navbar-close-icon">
           <i class="bi bi-x-lg"></i>
-        </span>
+        </span> -->
       </a>
 
       
@@ -24,23 +29,23 @@
       <div class="navbar-collapse collapse justify-content-end" id="navbarCollapse" >
         <ul class="navbar-nav me-0 mb-2 mb-md-0 pb-2">
           <li class="nav-item pe-4 active">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" href="#mianBanner">Home</a>
             <p class="navDeco"></p>
           </li>
           <li class="nav-item pe-4">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#question">Q&A</a>
             <p class="navDeco"></p>
           </li>
           <li class="nav-item pe-4">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#recommend">recommend</a>
             <p class="navDeco"></p>
           </li>
           <li class="nav-item pe-4">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#download">download</a>
             <p class="navDeco"></p>
           </li>
           <li class="nav-item pe-4">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#about">About</a>
             <p class="navDeco"></p>
           </li>
 
@@ -86,16 +91,14 @@ function styleNav() {
     
 
     $(".navbar-nav .nav-item").on("click",function(){
-    $(".navbar-nav .nav-item").removeClass("active");
-    $(".navbar-nav .nav-item").find(".navDeco").removeClass("bg-primary");
-    $(this).addClass("active");
-    $(this).find(".navDeco").addClass("bg-primary");
-    // 触发小横线出来的效果，这个效果只有初次触发的时候有。
-    // 
-    $(this).find(".navDeco").css("animation","mymove 1s forwards");
-// 切换
-
-
+      let self = $(this)
+      $(".navbar-nav .nav-item").removeClass("active");
+      $(".navbar-nav .nav-item").find(".navDeco").removeClass("bg-primary");
+      $(this).addClass("active");
+      $(this).find(".navDeco").addClass("bg-primary");
+      // 触发小横线出来的效果，这个效果只有初次触发的时候有。
+      // 
+      // $(this).find(".navDeco").css("animation","mymove 1s forwards");
     });
     
   }
