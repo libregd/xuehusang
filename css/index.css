@@ -1,0 +1,7 @@
+/* 想每个部分写一点，这样写起来不慌，等于规划进度*/
+@import url(../assets/css/header.css);
+
+/* 鼠标样式 */
+* {
+    cursor: url("../images/mouse.png"), auto;
+}

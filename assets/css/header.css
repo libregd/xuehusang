@@ -1,0 +1,18 @@
+
+.navDeco {
+    width: 0%;
+    height: 2px;  
+    margin: auto;
+    margin-bottom: 0;
+}
+@keyframes mymove {
+    from {width:5%;}
+    to {width:100%;}
+  }
+  /*我看看咋打开/
+  //http://127.0.0.1:5500/index.html#
+/* 应该可以把本地的3000让我访问的,让我看看页面 */
+/* live share service */
+/* 我在编辑器里打开看看, 现在用的是网页版 */
+/* 我觉得打开了呀，就是shared seviers ，有个localhost */
+/* 内心感受：写代码好难， */
