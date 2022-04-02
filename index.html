@@ -12,7 +12,18 @@
     <link rel="stylesheet" href="css/index.css">
     <!-- 引入jQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- 引入swiper -->
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+     <!-- Swiper JS -->
+     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- 引入animate.css 用来试图解决timeline -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <title>xuehusang</title>
 </head>
 <body>
@@ -24,6 +35,14 @@
     </div>
 
 <!--  -->
+<!--这部分放timeline.html-->
+<div id="intro" class="container-lg ">
+</div>
+
+<!--这部分放timeline.html-->
+<div id="timeLine" class="container-lg ">
+</div>
+
 <!--这部分放qa.html-->
 <div id="question" class="container-lg">
 </div>
@@ -49,6 +68,8 @@
     <script> 
         $("#mainNav").load("assets/header.html");
         $("#mainBanner").load("assets/banner.html");
+        $("#intro").load("assets/intro.html");
+        $("#timeLine").load("assets/timeline.html");
         $("#question").load("assets/question.html");
         $("#recommend").load("assets/recommend.html");
         $("#download").load("assets/download.html");

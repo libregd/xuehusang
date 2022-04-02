@@ -5,40 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .img_div {
-    margin: 20px 400px 0 400px;
-    position: relative;
-    width: 531px;
-    height: 354px;
-}
-.mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 531px;
-    height: 354px;
-    background: rgba(101, 101, 101, 0.6);
-    color: #ffffff;
-    opacity: 0;
-}
-.mask h3 {
-    text-align: center;
-}
-.img_div a:hover .mask { opacity: 1; }
+<!-- 引入jQuery-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
 
 
     </style>
 </head>
 <body>
-    <div class="img_div">
-        <img src="./images/igloo-logo.png">
-            <a href="#">
-                <div class="mask">
-                   <h3>A Picture of food</h3>
-                    </div>
-            </a>
-    </div>
+   <div class="swiper-wrapper">
+       
+   </div>
     
 </body>
 </html>
+<script>
+       var slideImgsUrls=[
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d436ec134269743.61d2e6b0ca8d5.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6c348134269743.61d2e6b0c9e1c.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0eb1de134269743.61d2e6b0cdec4.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c2b99b134269743.61d2e6b0cafe1.jpg'
+      ];
+   function test(array) {
+    for(let i = 0; i<array.length;i++){
+        var img = new Image();
+        img.src = array[i];
+        var slider = $('<div class="swiper-slide"></div>').append(img);
+        $('.swiper-wrapper').append(slider);
+    }
+
+       
+   }
+   test(slideImgsUrls);
+</script>

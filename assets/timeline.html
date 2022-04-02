@@ -1,0 +1,88 @@
+<h1 class=" py-5 mt-5 text-center ">Timeline</h1>
+<div class="row row-cols-2 g-5 mx-1 pb-3 ">
+    <div class="col col-1">
+        <!-- <div class="lineDeco-1 bg-primary"></div> -->
+        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
+        <div class="lineDeco-2 bg-primary"></div>
+    </div>
+    <div class="col col-10 ">
+        <div class="card mt-5 shadow-sm border-0">
+            <div class="card-body">
+                <div class="card-title">hello1</div>
+                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row row-cols-2 g-5 mx-1 pb-3">
+    <div class="col col-1">
+        <div class="lineDeco-1 bg-primary"></div>
+        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
+        <div class="lineDeco-2 bg-primary"></div>
+    </div>
+    <div class="col col-10">
+        <div class="card mt-5 shadow-sm border-0">
+            <div class="card-body">
+                <div class="card-title">hello</div>
+                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row row-cols-2 g-5 mx-1 pb-3">
+    <div class="col col-1">
+        <div class="lineDeco-1 bg-primary"></div>
+        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
+        <div class="lineDeco-2 bg-primary"></div>
+    </div>
+    <div class="col col-10">
+        <div class="card mt-5 shadow-sm border-0">
+            <div class="card-body">
+                <div class="card-title">hello</div>
+                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row row-cols-2 g-5 mx-1 pb-3">
+    <div class="col col-1">
+        <div class="lineDeco-1 bg-primary"></div>
+        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
+        <!-- <div class="lineDeco-2 bg-primary"></div> -->
+    </div>
+    <div class="col col-10">
+        <div class="card mt-5 shadow-sm border-0">
+            <div class="card-body">
+                <div class="card-title">hello</div>
+                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // 有些问题没解决：
+    // - 拿到符合所有需求的elements 后，能不能循环起来添加不同的内容。
+    //- 这个不同的内容可以是一个array，去挨着拿不同的样式。
+    //- 或者样式是是一样的，element之间间隔一定的时间触发。
+    // visually-hidden
+    const test = 'animate__animated animate__fadeInRight'
+    $('#timeLine').mouseenter(function(){
+        
+            // const timeSet = 1000;
+            $(this).find('.row .col-10').addClass(test);
+        
+        // : 0.9s;
+        
+    }
+    );
+    // $('#timeLine .row .col .card').addClass("animate__animated animate__fadeInRight")
+</script>

@@ -1,0 +1,29 @@
+.dotDeco{
+    width: 1rem;
+    height: 1rem;
+    /* background-position: center; */
+    /* position: relative;
+    left: 50%; */
+}
+
+.lineDeco-1 {
+    width: 0.2rem;
+    height: 3rem;
+    margin-left: 0.4rem;
+    /* background-position: center; */
+}
+.lineDeco-2 {
+    width: 0.2rem;
+    height: 100%;
+    margin-left: 0.4rem;
+    
+    /* background-position: center; */
+}
+/* #timeLine:hover{
+
+} */
+.animate__animated.animate__fadeInRight {
+    --animate-duration: 2s;
+
+  }
+  

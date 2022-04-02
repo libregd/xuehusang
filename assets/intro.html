@@ -1,0 +1,93 @@
+<h1 class=" pt-5 mt-5 text-center ">Intro</h1>
+<p class="lead text-center text-secondary">This is a lead paragraph. It stands out from regular paragraphs.</p>
+<div class="row g-5 mx-1 pb-5 pt-3">
+    <div class="col-md-6 col-sm-12">
+        <div class="card border-0 ">
+            <div class="card-body">
+                <h5 class="">tittle</h5>
+            <p>
+                Definition for the term.
+                And some more placeholder definition text.
+            </p>
+            </div>
+            
+        </div>
+        <div class="card border-0 ">
+            <div class="card-body">
+                <h5 class="">tittle</h5>
+            <p>
+                Definition for the term.
+                And some more placeholder definition text.
+            </p>
+            </div>
+            
+        </div>
+            
+
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <div class="container-fluid">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                  
+                </div>
+                <!-- <div class="swiper-button-next text-primary"></div>
+                <div class="swiper-button-prev text-primary"></div> -->
+                <div class="swiper-pagination"></div>
+              </div>
+        </div>
+    </div>
+</div>
+<script>
+
+// 往silide里批量添加图片，主要不想写地址了，写累了
+// 找到的教程：https://forum.jquery.com/topic/change-part-of-the-src-attribute-of-multiple-images-with-one-function
+// 地址太难载入了，淦，原图地址在：https://www.behance.net/gallery/134269743/HYPEBEAST-Playing-Cards?tracking_source=search_projects_recommended%7CPoker
+var slideImgsUrls=[
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d436ec134269743.61d2e6b0ca8d5.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6c348134269743.61d2e6b0c9e1c.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0eb1de134269743.61d2e6b0cdec4.jpg',
+      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c2b99b134269743.61d2e6b0cafe1.jpg'
+      ];
+   function test(array) {
+       //有多少图片需要多少slide，因此要一起写。
+       // 
+    for(let i = 0; i<array.length;i++){
+        var img = new Image();
+        img.src = array[i];
+        // 问题：我就不能在这里，给这个img元素写进去一个class嘛?
+        // 回答：classList.add("classname")
+        img.classList.add("img-fluid");
+        // 定义的slider是新建了元素，然后在内部追加一个元素。
+        var slider = $('<div class="swiper-slide"></div>').append(img);
+        // 新建好以后在box 内添加这个元素
+        $('.mySwiper .swiper-wrapper').append(slider);
+    }
+
+    // $('.mySwiper .swiper-wrapper .swiper-slide img').addClass("img-fluid");
+    // img的class 那么要是没早给到，最后再给也行。
+   }
+   test(slideImgsUrls);
+// 添加完毕
+
+var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        // loop咋没了
+        loop:true,
+        // lazy: true,
+        autoplay: {
+          delay: 1500,
+          disableOnInteraction: false,
+        },
+        // navigation: {
+        //   nextEl: ".swiper-button-next",
+        //   prevEl: ".swiper-button-prev",
+        // },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+
+</script>
