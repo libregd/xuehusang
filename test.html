@@ -5,36 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<!-- 引入bootstrap css online -->
+<link href="css/custom.min.css" rel="stylesheet">
+<!-- 引入bootstrap icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<!-- 引入整个页面的index.css -->
+<link rel="stylesheet" href="css/index.css">
 <!-- 引入jQuery-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+<!-- Link Swiper's CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+ <!-- Swiper JS -->
+ <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- 引入animate.css 用来试图解决timeline -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<style>
+    .swiper-wrapper
+{
+  transition-timing-function: linear;
+}
+
+.swiper-slide
+{
+  width: 200px;
+  height: 200px;
+}
+.swiper-slide img{
+    object-fit: cover; 
+}
+</style>
 
 
-    </style>
 </head>
 <body>
-   <div class="swiper-wrapper">
-       
-   </div>
+
+    
+        <div>
+            <div class="swiper-container mySwiper-1">
+                <div class="swiper-wrapper">
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        
+<!-- <div id="flickr"> -->
+
+</div>
     
 </body>
 </html>
 <script>
-       var slideImgsUrls=[
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d436ec134269743.61d2e6b0ca8d5.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b6c348134269743.61d2e6b0c9e1c.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/0eb1de134269743.61d2e6b0cdec4.jpg',
-      'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c2b99b134269743.61d2e6b0cafe1.jpg'
-      ];
-   function test(array) {
-    for(let i = 0; i<array.length;i++){
-        var img = new Image();
-        img.src = array[i];
-        var slider = $('<div class="swiper-slide"></div>').append(img);
-        $('.swiper-wrapper').append(slider);
-    }
+$(function() {
 
-       
-   }
-   test(slideImgsUrls);
+      // modern browsers (you're not generally allowed to fetch data from remote sites).
+  var flickrApiUrl = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+
+  // Next, we use jQuery's getJSON() function to access to API and retrieve data.
+  $.getJSON(flickrApiUrl, {
+    tags: "sun, beach",
+    tagmode: "any",
+    format: "json"
+  }).done(function(data) {
+    // Inside done(), you can work with the retrieved data.
+    // console.log(data);
+
+    // Let's use jQuery $.each() function to create an <img> tag for each image .
+    $.each(data.items, function(index, item) {
+      console.log(item);  // Helpful to see what data you can access
+
+      // Create new image and add to gallery.
+    $('.mySwiper-1 .swiper-wrapper').append(
+        $('<div class="swiper-slide bg-primary"></div>').append(
+            $("<img>").attr("src", item.media.m).addClass("img-fluid")
+        )
+    );
+      // Stop after 5 images.
+      if (index ==5) {
+        return false;
+      }
+    });
+  }).fail(function(response) {
+    // Inside fail(), you can handle error cases.
+    console.log(response);
+    alert("AJAX call failed.")
+  });
+
+new Swiper( '.mySwiper-1',
+{
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  loop: true,
+  speed: 5000,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: true,
+    // pauseOnMouseEnter: true,
+  },
+} );
+
+})
+
 </script>

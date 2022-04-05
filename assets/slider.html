@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h1 class=" pt-5 mt-5 text-center ">slider</h1>
+    <p class="lead text-center text-secondary">This is a lead paragraph. It stands out from regular paragraphs.</p>
+    <div class="row g-5 mx-1 pb-5">
+        <div class="swiper mySwiper-2 ">
+       
+        </div>
+        <div class="swiper mySwiper-1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide bg-primary"><img src="http://tva3.sinaimg.cn/bmiddle/006APoFYly8gs34xc5tz0g308c08c7c2.gif"
+                        class="img-fluid"></div>
+                <div class="swiper-slide bg-primary"><img src="http://tva3.sinaimg.cn/bmiddle/008h4Hg2gy1gxb1gzxuz0g309d095nin.gif"
+                        class="img-fluid"></div>
+                <div class="swiper-slide bg-primary"><img src="http://tva3.sinaimg.cn/bmiddle/78b88159gy1gk2hdbjqnug209s09s7wh.gif"
+                        class="img-fluid"></div>
+                <div class="swiper-slide bg-primary"><img src="http://tva3.sinaimg.cn/bmiddle/710a2147gy1fq0nevvl3oj20fk0fkaal.jpg"
+                        class="img-fluid"></div>
+                <div class="swiper-slide bg-primary"><img src="http://tva3.sinaimg.cn/bmiddle/006qir4oly1gz08s3vqjvj30go0gqaaj.jpg"
+                        class="img-fluid"></div>
+                <div class="swiper-slide bg-primary"><img src="http://tva3.sinaimg.cn/bmiddle/007cQUqsly1gyou4ihyfrj30go0gkdi0.jpg"
+                        class="img-fluid"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+</div>
+<script>
+    new Swiper( '.mySwiper-1',
+{
+  slidesPerView: 'auto',
+  spaceBetween: 20,
+  loop: true,
+  speed: 5000,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: true,
+    // pauseOnMouseEnter: true,
+  },
+} );
+
+</script>

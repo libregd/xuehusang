@@ -1,0 +1,11 @@
+.mySwiper-1 .swiper-wrapper .swiper-slide{
+width: 10rem;
+height: 10rem;
+}
+.mySwiper-1 .swiper-wrapper .swiper-slide:hover{
+  opacity: 0.5;
+  }
+.swiper-wrapper
+{
+  transition-timing-function: linear;
+}
