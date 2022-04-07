@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LayerSlider</title>
+        <!-- 引入bootstrap css online -->
+        <link href="css/custom.min.css" rel="stylesheet">
+    <!-- LayerSlider 样式文件 -->
+<link rel="stylesheet" href="https://cdn.codingghost.com.mx/smarty/assets/plugins/slider.layerslider/css/layerslider.css" type="text/css">
+ 
+<!-- 第三方库: jQuery & GreenSock -->
+<script src="https://cdn.codingghost.com.mx/smarty/assets/plugins/slider.layerslider/js/jquery.js" type="text/javascript"></script>
+<script src="https://cdn.codingghost.com.mx/smarty/assets/plugins/slider.layerslider/js/greensock.js" type="text/javascript"></script>
+ 
+<!-- LayerSlider js文件 -->
+
+<script src="https://cdn.codingghost.com.mx/smarty/assets/plugins/slider.layerslider/js/layerslider.transitions.js" type="text/javascript"></script>
+<script src="https://cdn.codingghost.com.mx/smarty/assets/plugins/slider.layerslider/js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="layerslider" style="width: 800px; height: 500px;">
+ 
+        <!-- 层 -->
+        <div class="ls-slide" data-ls="slidedelay: 4000; transition2d: 2,7,9;">
+     
+            <!-- 层背景图片 -->
+            <img src="assets/imgs/deco-10.png" class="ls-bg" alt="Slide thumbnail" style="top: 0%; left: 20%;">
+
+     
+            <!-- 图片动画元素 -->
+            <img src="assets/imgs/deco-0.png" class="ls-li-1" data-ls="parallaxlevel: 2;" alt="Image layer" style="top: 20%; left: 80%; width: 12rem;">
+            <img src="assets/imgs/deco-1.png" class="ls-li-2" data-ls="parallaxlevel: -4;" alt="Image layer" style="top: 70%; left: 80%; width: 10rem;">
+            <img src="assets/imgs/deco-3.png" class="ls-li-3 w-10 h-10" data-ls="parallaxlevel: 3;" alt="Image layer" style="top: 30%; left: 50%; width: 4rem; ">
+            <img src="assets/imgs/deco-8.png" class="ls-li-3 w-10 h-10" data-ls="parallaxlevel: -1;" alt="Image layer" style="top: 60%; left: 50%; width: 4rem;">
+            <img src="assets/imgs/deco-7.png" class="ls-li-3 w-10 h-10" data-ls="parallaxlevel: -1;" alt="Image layer" style="top: 00%; left: 80%; width: 12rem;">
+            <img src="assets/imgs/deco-5.png" class="ls-li-3 w-10 h-10" data-ls="parallaxlevel: 2;" alt="Image layer" style="top: 50%; left: 95%; width: 6rem;">
+            <!-- 文本动画元素 -->
+            <div class="row ls-l pt-5 ps-5"  data-ls="parallaxlevel: 0;">
+                <div class="col-12">
+                    <h1>welcome Bro</h1>
+                    <figcaption class="blockquote-footer fw-lighter fs-6">
+                        Illustration by <cite title="Source Title"><a href="https://icons8.com/illustrations/author/iAdLsFJOKDrk">Tatyana Krasutskaya</a></cite> from <cite title="Source Title"><a href="https://icons8.com/illustrations">Ouch!</a></cite>
+                      </figcaption>
+                    
+                </div>
+            </div>
+     
+        </div>
+        
+    </div>
+
+
+    <script type="text/javascript">
+
+        // 在文档加载完成后初始化本插件
+        $(document).ready(function(){
+     
+            // 在目标元素上调用LayerSlider方法
+            $('#layerslider').layerSlider({
+     
+                // 滑块选项放在这里
+                // 参考“滑块参数列表”中的参数
+            });
+        });
+     
+    </script>
+</body>
+</html>

@@ -2,8 +2,24 @@
     <h1 class=" pt-5 mt-5 text-center ">slider</h1>
     <p class="lead text-center text-secondary">This is a lead paragraph. It stands out from regular paragraphs.</p>
     <div class="row g-5 mx-1 pb-5">
-        <div class="swiper mySwiper-2 ">
-       
+        <div class="swiper">
+            <div id="layerslider-2" style="width: 800px; height: 400px;">
+                <!-- 这里放滑动图层 -->
+                 <!-- first slide -->
+                <div class="ls-slide" data-ls="slidedelay: 1500;transition2d:7;">
+                    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZmFzaG93JTIwYmVhdXR5fGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="ls-bg" alt="Slide background">
+                </div>
+                <div class="ls-slide" data-ls="slidedelay: 1500;transition2d:23;">
+                    <img src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzaG93JTIwYmVhdXR5fGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="ls-bg" alt="Slide background">
+                </div>
+                <div class="ls-slide" data-ls="slidedelay: 1500;transition2d:30;">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmFzaG93JTIwYmVhdXR5fGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=800&q=60" class="ls-bg" alt="Slide background">
+                </div>
+                <div class="ls-slide" data-ls="slidedelay: 1500;transition2d:27;">
+                    <img src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGZhc2hvdyUyMGJlYXV0eXxlbnwwfDB8MHx8&auto=format&fit=crop&w=800&q=60" class="ls-bg" alt="Slide background">
+                </div>
+                
+            </div>
         </div>
         <div class="swiper mySwiper-1">
             <div class="swiper-wrapper">
@@ -25,13 +41,36 @@
     </div>
 
 </div>
+<script type="text/javascript">
+ 
+    // 文档加载完成后执行此代码
+    $(document).ready(function(){
+ 
+        // 调用 LayerSlider 目标元素并添加滑块的一些参数。
+        $('#layerslider-2').layerSlider({
+    
+            firstLayer: 2,
+            skin: 'borderlesslight',
+            skinsPath: 'assets/plugins/slider.layerslider/skins/',
+            autoStart: true,
+            navStartStop: false,
+            responsive: true,
+            hoverPrevNext: false,
+            thumbnailNavigation: false
+ 
+            // 请注意每个参数后面的逗号
+            // 除了最后一个参数
+        });
+    });
+ 
+</script>
 <script>
     new Swiper( '.mySwiper-1',
 {
   slidesPerView: 'auto',
   spaceBetween: 20,
   loop: true,
-  speed: 5000,
+  speed: 2000,
   autoplay: {
     delay: 0,
     disableOnInteraction: true,
