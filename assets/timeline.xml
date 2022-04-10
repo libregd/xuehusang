@@ -1,0 +1,31 @@
+<middleAges>
+    <draw>
+        <source>
+            <img>http://???/picture.jpg</img>
+        </source>
+        <time>4世纪中旬
+            <notice>也有争议，觉得是5世纪初</notice>
+        </time>
+        <name>《圣经1号》</name>
+        <author>作者</author>
+        <background>整个一个帝国打来打去，但是......</background>
+        <special>技法上用了</special>
+        <note>这条是测试用的</note>
+    </draw>
+
+    <draw>
+        <source>
+            <img>http://???/picture2.jpg</img>
+        </source>
+        <time>5世纪中旬
+           
+        </time>
+        <name>《福音书一号》</name>
+        <author>作者</author>
+        <background>整个一个帝国打来打去，但是......整个一个帝国打来打去，但是......</background>
+        <special>技法上用了</special>
+       
+    </draw>
+
+
+</middleAges>

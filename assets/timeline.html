@@ -1,88 +1,111 @@
-<h1 class=" py-5 mt-5 text-center ">Timeline</h1>
-<div class="row row-cols-2 g-5 mx-1 pb-3 ">
-    <div class="col col-1">
-        <!-- <div class="lineDeco-1 bg-primary"></div> -->
-        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
-        <div class="lineDeco-2 bg-primary"></div>
-    </div>
-    <div class="col col-10 ">
-        <div class="card mt-5 shadow-sm border-0">
-            <div class="card-body">
-                <div class="card-title">hello1</div>
-                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
-                </p>
-            </div>
-        </div>
-    </div>
 
-</div>
-<div class="row row-cols-2 g-5 mx-1 pb-3">
-    <div class="col col-1">
-        <div class="lineDeco-1 bg-primary"></div>
-        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
-        <div class="lineDeco-2 bg-primary"></div>
-    </div>
-    <div class="col col-10">
-        <div class="card mt-5 shadow-sm border-0">
-            <div class="card-body">
-                <div class="card-title">hello</div>
-                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
-                </p>
-            </div>
-        </div>
-    </div>
+<h1 class=" py-5 mt-5 text-center ">Timeline1</h1>
+<!-- 第一种timeline，用的是getJSOn办法，读取的是本地文件，但是这个本地文件不在这个文件的范围里，因此浏览器拒绝这么做，所以在index.html -->
+<!-- 里必须去先引入，script才能去getJSon -->
+<div class="row row-cols-2 g-5 mx-1 pb-3 " id="timelineBox-1">
 
-</div>
-<div class="row row-cols-2 g-5 mx-1 pb-3">
-    <div class="col col-1">
-        <div class="lineDeco-1 bg-primary"></div>
-        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
-        <div class="lineDeco-2 bg-primary"></div>
-    </div>
-    <div class="col col-10">
-        <div class="card mt-5 shadow-sm border-0">
-            <div class="card-body">
-                <div class="card-title">hello</div>
-                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
-                </p>
-            </div>
-        </div>
-    </div>
-
-</div>
-<div class="row row-cols-2 g-5 mx-1 pb-3">
-    <div class="col col-1">
-        <div class="lineDeco-1 bg-primary"></div>
-        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
-        <!-- <div class="lineDeco-2 bg-primary"></div> -->
-    </div>
-    <div class="col col-10">
-        <div class="card mt-5 shadow-sm border-0">
-            <div class="card-body">
-                <div class="card-title">hello</div>
-                <p class="text-secondary text-wrap fw-light">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element. These classes can be customized as needed with our utility API.
-                </p>
-            </div>
-        </div>
-    </div>
 
 </div>
 
 <script>
-    // 有些问题没解决：
-    // - 拿到符合所有需求的elements 后，能不能循环起来添加不同的内容。
-    //- 这个不同的内容可以是一个array，去挨着拿不同的样式。
-    //- 或者样式是是一样的，element之间间隔一定的时间触发。
-    // visually-hidden
-    const test = 'animate__animated animate__fadeInRight'
-    $('#timeLine').mouseenter(function(){
+// 这种办法我想尝试插入json文件，使用了jquery的getJSon办法
+$(document).ready(function() {
+    // 创建了3个timeline的装饰样式，
+    
+    // 这里的路径是针对index.html的位置
+    $.getJSON("assets/timeline.json",function (data) {
+        //拿到的data是一个数组，数组里面是很多个对象，对象是有两个属性
+        // console.log(data);
+        // 这个是用来生成函数每一个timeline items
+        function styleItem(item,position) {
+            var elemDecoStart = $(`<div class="col col-1 d-none d-sm-block">
+        <div class="lineDeco-1 bg-primary visually-hidden"></div>
+        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
+        <div class="lineDeco-2 bg-primary" style="height:120%"></div>
+    </div>
+    `);
+    var elemDecoEnd = $(`<div class="col col-1 d-none d-sm-block">
+        <div class="lineDeco-1 bg-primary"></div> 
+        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
+    </div>
+    `);
+    var elemDecoMid = $(`<div class="col col-1 d-none d-sm-block">
+         <div class="lineDeco-1 bg-primary"></div>
+        <div class="dotDeco bg-white  rounded-circle border border-3 border-primary"></div>
+        <div class="lineDeco-2 bg-primary"></div>
+    </div>
+    `);
+    // 上面上个是小圆点的样式，就3，开头，结尾和中间。
+
+    // 这个是做这个卡片的样子
+            var itemTitle = $('<div class="card-title"></div>').text(item.time); 
+            var itemText = $('<p class="text-secondary text-wrap fw-light"></p>').text(item.text);
+            var ItemCol = $('<div class="col col-11 card-body card mt-5 shadow-sm border-0 "></div>').append(itemTitle,itemText);
+            // 
+            //    这里判断了一下，参数两个，一个是传进来object，一个是传进来这个object的位置，添加的小圆点线不一样
+            if (position == "start") {
+                $('#timelineBox-1').append(elemDecoStart,ItemCol);
+            } 
+            else if(position == "end"){
+                $('#timelineBox-1').append(elemDecoEnd,ItemCol);
+            }
+            else if(position == "mid"){
+                $('#timelineBox-1').append(elemDecoMid,ItemCol);
+            }else{
+                console.log("something error in function styleItem()");
+            }
+            
+            }
+    // 首item就一次
+        var dataStart = data[0];
+        styleItem(dataStart,"start");
+    // 中间要先找出来，再map，也有小疑问，我会觉得styleItem()这个函数还是写得有点紧吧了，因为我这些函数都没有return 
+        var dataMid = data.slice(1,-1);
+        dataMid.map(item =>{
+            styleItem(item,"mid");
+        });
+// 这个就是最后一个元素
+        var dataEnd = data[data.length - 1];
+        styleItem(dataEnd,"end");
         
-            // const timeSet = 1000;
-            $(this).find('.row .col-10').addClass(test);
-        
-        // : 0.9s;
-        
-    }
-    );
-    // $('#timeLine .row .col .card').addClass("animate__animated animate__fadeInRight")
+    }).fail(function(){
+            console.log("An error has occurred.");
+        });
+});
+
+</script>
+<!-- 这里想放第二种timeline，因为发觉，如果原数据是我自己编写的话，xml写起来可以说甚至都比md好用 -->
+<h1 class=" py-5 mt-5 text-center ">Timeline2</h1>
+<div class="row row-cols-2 g-5 mx-1 pb-3 "  id="timelineBox-2">
+
+    </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+
+            type: "GET",
+            url: "assets/timeline.xml",
+            dataType: "xml",
+            error: function (e) {
+            alert("An error occurred while processing XML file");
+            console.log("XML reading Failed: ", e);
+        },
+
+            success: function(xml){
+                $(xml).find("draw").each(function() {
+                    var drawName = $(this).find('name').text();
+                    var htmlDrawName = $('<h5 class="card-title"></h5>').text(drawName);
+                    var drawBackground = $(this).find('background').text();
+                    var htmlDrawBackground = $('<p class="card-text"></p>').text(drawBackground);
+                    var html_1 = $('<div class="card-body"></div>').append(htmlDrawName,htmlDrawBackground);
+                    // console.log(htmlDrawName,htmlDrawBackground);
+                    var htmlLast = $('<div class="card w-100"></div>').append(html_1);
+                    $("#timelineBox-2").append(htmlLast);
+                });
+            }
+            
+
+        }); 
+    });
 </script>
